@@ -29,6 +29,10 @@ export const authOptions = {
          jwt : ({token , user}) => {
               console.log(token);
               return token
+        },
+        sessions : ({session , user }) => {
+            console.log(session)
+            return session
         }
     }
 } 
