@@ -10,7 +10,6 @@ export const authOptions = {
         password: { label: 'Password', type: 'password', placeholder: 'Enter password' }
       },
             async authorize(credentials : any) {
-                console.log(credentials);
                   return {
                     id : "user`",
                     name : "surya Moorthy",
@@ -27,11 +26,9 @@ export const authOptions = {
     secret : process.env.NEXTAUTH_SECRET,
     callbacks : {
          jwt : ({token , user}) => {
-              console.log(token);
               return token
         },
         sessions : ({session , user }) => {
-            console.log(session)
             return session
         }
     }
