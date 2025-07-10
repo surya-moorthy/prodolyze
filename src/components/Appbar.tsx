@@ -3,19 +3,21 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { SidebarTrigger } from "./ui/sidebar";
 
 export const Appbar = () => {
   const session = useSession();
   const router = useRouter();
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-neutral-100 shadow-sm w-full">
+    <header className="flex justify-between items-center px-6 py-4 bg-neutral-100 shadow-sm w-full">
+       <SidebarTrigger/>
       {/* Brand */}
       <Link href={"/"} className="text-lg font-bold hover:underline hover:underline-offset-2">
         Protolyze
       </Link>
 
-      {/* Nav Links */}
+      {/* header Links */}
       <ul className="flex flex-wrap gap-3 md:gap-6 items-center">
         {session.status === "unauthenticated" ? (
           <>
@@ -40,6 +42,6 @@ export const Appbar = () => {
           </>
         )}
       </ul>
-    </nav>
+    </header>
   );
 };
