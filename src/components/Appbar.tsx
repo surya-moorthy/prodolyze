@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { SidebarTrigger } from "./ui/sidebar";
+import Image from "next/image";
 
 export const Appbar = () => {
   const session = useSession();
@@ -11,11 +12,13 @@ export const Appbar = () => {
 
   return (
     <header className="flex justify-between items-center px-6 py-4 bg-neutral-100 shadow-sm w-full">
-       <SidebarTrigger/>
-      {/* Brand */}
-      <Link href={"/"} className="text-lg font-bold hover:underline hover:underline-offset-2">
-        Protolyze
-      </Link>
+      <div className="flex gap-9">
+          {session.status === "unauthenticated" ? <></> : <SidebarTrigger/>}
+          {/* Brand */}
+          <Link href={"/"} className="text-lg font-bold hover:underline hover:underline-offset-2">
+            Protolyze
+          </Link>
+      </div>
 
       {/* header Links */}
       <ul className="flex flex-wrap gap-3 md:gap-6 items-center">
@@ -34,7 +37,11 @@ export const Appbar = () => {
         ) : (
           <>
             <li>
-              <Button>Profile</Button>
+              <Button className="font-semibold">
+                 {
+                  session.data?.user?.name
+                 }
+              </Button>
             </li>
             <li>
               <Button onClick={() => signOut()}>Logout</Button>

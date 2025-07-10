@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { Providers } from "./providers";
+import { Appbar } from "@/components/Appbar";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 

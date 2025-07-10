@@ -11,7 +11,7 @@ export function Providers({children} : {
     return <SessionProvider>
            <SidebarProvider>
               <main>
-                  
+                   <Appbar/>
                    {children}
               </main>
             </SidebarProvider>

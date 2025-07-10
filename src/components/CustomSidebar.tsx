@@ -20,19 +20,14 @@ const items = [
     icon: Home,
   },
   {
-    title: "Inbox",
+    title: "Dashboard",
     url: "#",
     icon: Inbox,
   },
   {
-    title: "Calendar",
+    title: "Projects",
     url: "#",
     icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
   },
   {
     title: "Settings",
@@ -46,19 +41,19 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="flex justify-between px-4">
-             <h3 className="text-lg font-extrabold ">
+          <SidebarGroupLabel className="flex justify-between items-center py-4 px-4">
+             <h3 className="text-xl font-extrabold text-neutral-950">
                   Protolyze
              </h3>
             <SidebarTrigger size={"lg"}/>
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu className="py-8">
+            <SidebarMenu className="py-8 gap-5">
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                <SidebarMenuItem key={item.title} className="hover:bg-neutral-300 border rounded-lg border-neutral-950 ">
+                  <SidebarMenuButton asChild className="text-lg font-semibold">
                     <a href={item.url}>
-                      <item.icon />
+                      <item.icon size={20}/>
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
