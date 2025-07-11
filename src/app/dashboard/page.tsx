@@ -12,9 +12,7 @@ export default function page() {
   const session = useSession();
   return (
     <div className="min-w-screen px-72 py-16">
-       {
-              session.status == "unauthenticated" ? <></> : <AppSidebar/>
-       }
+               <AppSidebar/>
        <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
             <ProjectsCard/>
             <ActivityCard/>
@@ -23,7 +21,7 @@ export default function page() {
        <div className='grid grid-cols-1 lg:grid-cols-2 '>
           <Chart/> 
           <ProjectProgress/>
-       </div>
+       </div> 
     </div>
   )
 }
