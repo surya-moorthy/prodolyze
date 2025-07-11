@@ -1,6 +1,6 @@
 'use client'
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { SidebarTrigger } from "./ui/sidebar";
@@ -8,12 +8,11 @@ import Image from "next/image";
 
 export const Appbar = () => {
   const session = useSession();
-  const router = useRouter();
-
+  const pathname = usePathname();  
   return (
     <header className="flex justify-between items-center px-6 py-4 bg-neutral-100 shadow-sm w-full">
       <div className="flex gap-9">
-          {session.status === "unauthenticated" ? <></> : <SidebarTrigger/>}
+          {pathname === "/dashboard" ? <SidebarTrigger/> : null }
           {/* Brand */}
           <Link href={"/"} className="text-lg font-bold hover:underline hover:underline-offset-2">
             Protolyze

@@ -3,6 +3,7 @@ import ActivityCard from '@/components/ActivityCard';
 import Chart from '@/components/Chart';
 import { AppSidebar } from '@/components/CustomSidebar'
 import Deadline from '@/components/Deadline';
+import ProjectProgress from '@/components/ProjectProgress';
 import ProjectsCard from '@/components/ProjectsCard';
 import { useSession } from 'next-auth/react'
 import React from 'react'
@@ -19,9 +20,9 @@ export default function page() {
             <ActivityCard/>
             <Deadline/>
        </div>
-       <div className='grid grid-cols-1 lg:grid-cols-2'>
+       <div className='grid grid-cols-1 lg:grid-cols-2 '>
           <Chart/> 
-          projects 
+          <ProjectProgress/>
        </div>
     </div>
   )

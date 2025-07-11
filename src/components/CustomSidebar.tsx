@@ -16,22 +16,22 @@ import {
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
-    title: "Dashboard",
-    url: "#",
+    title: "Dashboard", 
+    url: "/dashboard",
     icon: Inbox,
   },
   {
     title: "Projects",
-    url: "#",
+    url: "/projects",
     icon: Calendar,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ]
